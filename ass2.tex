@@ -1,0 +1,81 @@
+\documentclass{article}
+
+\sloppy 
+
+\usepackage[bottom=1in,top=1.5in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\newcommand{\ordo}{\mathcal{O}}
+\newcommand{\mset}[1]{\lbrace #1 \rbrace}
+
+\title{Assignment 2 \\ Algorithms and Data Structures 1 (1DL210) \\ 2021}
+\author{Hooman Asadian \and Sarbojit Das}
+
+\begin{document}
+
+\maketitle
+
+\section*{Instructions}
+
+\begin{itemize}
+\item Unless you have asked for and received special permission, solutions must be prepared in groups.
+If you got special permission for the first assignment, you also have special permission for this assignment.
+%
+\item Make sure that your programs run on the \textsc{Unix/Linux} system.
+Any (sub)solutions that don't run on the \textsc{Unix/Linux} system {\bf will} receive 0 points.
+In particular, you should verify the output of your implementation against the output of the  \textsc{Unix/Linux} sorting 
+command line \texttt{sort -n}. 
+% 
+\item When you have completed the assignment, you should have four files: three sorting programs and one Pdf document explaining the differences between them.
+Make a {\tt .zip} file containing these four files.
+\item Submit the resulting {\tt .zip} file to Studium. Only {\bf one} of you from each group needs to do this.
+\end{itemize}
+
+\section*{Implementing Sorting Algorithms}
+
+For this assignment, you are going to implement three different sorting algorithms
+based on their textbook descriptions that you can find in the lecture slides.
+\begin{itemize}
+\item Each algorithm is to be implemented in separate files. 
+\item The file sort.py contains skeleton code to run your algorithm. Call your sorting algorithm inside respective functions of sort.py. For example, bubblesort is implemented and called at line 32 inside {\tt run\_bubblesort()} function.
+\item The program should read a file called {\tt nums.txt}, which can be assumed to contain integers separated by newlines.
+\item {\tt rangen.py}(or {\tt rangen\_py3x.py} for python 3x)
+takes an integer argument $n$ and outputs a file {\tt nums.txt} containing $n$ rows with random numbers in the range $\mset{0, \dots, n}$. 
+Example of usage (on python \textbf{3.x}): {\tt python rangen\_py3x.py 100}
+\item Output of each algorithm is stored in a file. For example, for insertion sort the file is {\tt insertionsorted.txt}.
+\item Additionally, you should verify that your result matches the output of the {\tt sort -n} \textsc{Unix/Linux} system command. Running{\tt test.sh} will do for you.
+\item If you are not implementing your algorithm in python or not using the python skeleton code, make sure that your program behaves similarly.
+In this case, you probably need to re-implement yourself a \texttt{run()} function to run your algorithms. 
+\item Your code should produce output files with the names {\tt insertionsorted.txt, quicksorted.txt,} and {\tt heapsorted.txt}.
+Each of these files should contain output sequence as integers separated by newlines.
+\end{itemize}
+Note that the arrays in the lecture and in the textbook are indexed from 1,
+whereas in most programming languages they are indexed from 0.
+
+
+\subsection*{Insertion Sort (3p)}
+
+Implement {\sc Insertion-Sort}  from the second lecture.
+
+\subsection*{Quicksort (3p)}
+
+Start by implementing {\sc Partition}. Then use it to implement {\sc Quicksort} from the fourth lecture.
+
+\subsection*{Heapsort (3p)}
+
+Implement the functions {\sc Max-Heapify}, {\sc Build-Max-Heap}, and {\sc Heapsort} from the fifth lecture.
+
+
+
+\subsection*{Comparison (1p)}
+
+What are the differences between the three algorithms? For each algorithm, mention a situation where it has an advantage over
+the other two.
+
+
+
+\end{document}
