@@ -2,22 +2,36 @@ import os
 import array
 import sys
 import insertionsort
-import bubblesort
+import quicksort
 
+# Bubble Sort Implementation
+
+def swap(a, i, j):
+    t = a[j]
+    a[j] = a[i]
+    a[i] = t
+
+
+def bubblesort(a):
+    sorted = False
+    while not sorted:
+        sorted = True
+        for i in range(len(a)-1):
+            if a[i] > a[i+1]:
+                swap(a, i, i+1)
+                sorted = False
 
 
 
 def run_bubblesort():
     # read the content of nums.txt into an array
-    print("running bubble sort")
     nums = open('nums.txt', 'r')
     a = []
     for line in nums:
         a.append(int(str.strip(line)))
 
     # Testing bubblesort
-    bubblesort.bubblesort(a)
-    print(a)
+    bubblesort(a)
 
     # output nums_sorted.txt
     nums_sorted = open('bubblesorted.txt', 'w')
@@ -28,7 +42,6 @@ def run_bubblesort():
     nums_sorted.close()
 
 def run_insertionsort():
-    print("running bubblesort")
     # read the content of nums.txt into an array
     nums = open('nums.txt', 'r')
     a = []
@@ -38,7 +51,6 @@ def run_insertionsort():
     # Testing insertion sort
     # Call your insertion sort implementation here
     insertionsort.inssort(a)
-    print(a)
 
     # output nums_sorted.txt
     nums_sorted = open('insertionsorted.txt', 'w')
@@ -57,7 +69,7 @@ def run_quicksort():
 
     # Testing quicksort
     # Call your quicksort implementation here
-    # quicksort(a)
+    quicksort.quicksort(a, 0, 99)
 
     # output nums_sorted.txt
     nums_sorted = open('quicksorted.txt', 'w')
@@ -89,8 +101,7 @@ def run_heapsort():
 
 
 def run():
-    #check if nums.txt exists
-    # print("hello is here \n")
+    # check if nums.txt exists
     if not os.path.exists('nums.txt'):
         print ("First create nums.txt")
         sys.exit(0)

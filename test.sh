@@ -20,7 +20,7 @@ else
   echo "Not ok"
 fi
 
-echo "Checking output of quicksort"
+echo "Checking output of heapsort"
 diff heapsorted.txt nums_ref.txt
 if [ $? -eq 0 ] 
 then
